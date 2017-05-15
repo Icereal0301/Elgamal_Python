@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import random
-
+# 判断a、b是否互素
 def panduanhusu(a,b):
 	if a < b:
 		a,b=b,a
@@ -15,6 +15,7 @@ def panduanhusu(a,b):
 	else:
 		return 0
 
+# aks判断随机数是否为素数
 def  aks_sushupanding(n):
 	flag = 0
 	a = 2
@@ -25,6 +26,7 @@ def  aks_sushupanding(n):
 	else:
 		return 0
 
+# 取得一个随机素数
 def get_suijisushu():
 	flag = 0
 	while not flag:
@@ -34,6 +36,7 @@ def get_suijisushu():
 		flag = aks_sushupanding(n)
 	return n
 
+# 取得本源元
 def benyuanyuan(p, euler_n):
 	flag = 0
 	tmp = 1
