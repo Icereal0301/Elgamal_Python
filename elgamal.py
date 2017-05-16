@@ -53,7 +53,7 @@ def benyuanyuan(p, euler_n):
 		if 	j == euler_n:
 			break
 	return g
-
+# 取得生成元
 def get_x(p):
 	x = random.randrange(2,p)
 	return x
@@ -62,6 +62,7 @@ def get_y(g,x,p):
 	y = pow(g,x,p)
 	return y
 
+# 签名
 def sign_ver(x,y,g,p):
 	k = get_suijisushu()
 	a = pow(g,k,p)
