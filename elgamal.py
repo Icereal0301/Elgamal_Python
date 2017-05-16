@@ -84,15 +84,19 @@ def sign_ver(x,y,g,p):
 	if (y**a * a**b) % p == pow(g,s,p):
 		print('验证通过')
 
-def elgamal_jiami_jimi(x,y,g,p):
+def elgamal_jiami(y,g,p):
 	m = input('输入明文加密： ')	
 	k = get_suijisushu()
 	a = pow(g,k,p)
 	b = []
 	for i in m:
 		b.append (ord(i) * pow(y,k,p))
-	print ('密文： ',(a,b))	
+	print ('密文： ',(a,b))
+	return a, b	
+
+def elgamal_jiemi(x, g ,p, a, b):	
 	c = []
+	#a = pow(g,k,p)
 	for i in b:
 		c.append(i // pow(a,x,p))
 	n = ''
@@ -109,7 +113,9 @@ def elgamal():
 	print ('公钥：',y,g,p)
 	print ('私钥：',x)
 	sign_ver(x,y,g,p)
-	elgamal_jiami_jimi(x,y,g,p)
+	#elgamal_jiami_jimi(x,y,g,p)
+	a, b = elgamal_jiami(y,g,p)
+	elgamal_jiemi(x, g ,p, a, b)
 
 if __name__=='__main__':
 	elgamal()
