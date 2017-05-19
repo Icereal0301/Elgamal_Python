@@ -60,7 +60,7 @@ def get_x_y(g, p):
 	y = pow(g,x,p)
 	return x, y
 
-#def get_y(g,x,p):
+# def get_y(g,x,p):
 	#y = pow(g,x,p)
 	#return y
 
