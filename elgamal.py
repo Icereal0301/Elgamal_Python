@@ -31,6 +31,7 @@ def get_suijisushu():
 	flag = 0
 	while not flag:
 		n = random.randrange(200,500)
+		# 排除部分特殊值
 		if (n%2 == 0 or n%3 == 0 or n%5 == 0 or n%7 == 0 or n%13 == 0):
 			continue
 		flag = aks_sushupanding(n)
@@ -54,13 +55,14 @@ def benyuanyuan(p, euler_n):
 			break
 	return g
 # 取得生成元
-def get_x(p):
+def get_x_y(g, p):
 	x = random.randrange(2,p)
-	return x
-
-def get_y(g,x,p):
 	y = pow(g,x,p)
-	return y
+	return x, y
+
+#def get_y(g,x,p):
+	#y = pow(g,x,p)
+	#return y
 
 # 签名
 def sign_ver(x,y,g,p):
@@ -108,8 +110,8 @@ def elgamal():
 	p = get_suijisushu()
 	euler_n = p - 1
 	g = benyuanyuan(p, euler_n)
-	x = get_x(p)
-	y = get_y(g,x,p)
+	x, y = get_x_y(g, p)
+	#y = get_y(g,x,p)
 	print ('公钥：',y,g,p)
 	print ('私钥：',x)
 	sign_ver(x,y,g,p)
