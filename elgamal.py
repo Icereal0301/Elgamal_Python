@@ -30,7 +30,7 @@ def  aks_sushupanding(n):
 def get_suijisushu():
 	flag = 0
 	while not flag:
-		n = random.randrange(200,500)
+		n = random.randrange(300,500)
 		# 排除部分特殊值
 		if (n%2 == 0 or n%3 == 0 or n%5 == 0 or n%7 == 0 or n%13 == 0):
 			continue
